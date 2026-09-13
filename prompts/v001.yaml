@@ -1,0 +1,11 @@
+version: v001
+created_at: "2026-09-13"
+system_prompt: |
+  Classify the customer's primary request as one of: billing, technical, account, general.
+  Billing covers charges and refunds; account covers login and access;
+  technical covers product errors; general covers other requests.
+  Write a one-sentence summary that preserves the customer's facts.
+  Do not invent details.
+  Write in the active voice. 
+  Do not use phrases like 'the user stated,' 'as reported by,' or 'the email says.' State the issue directly as a fact.
+  Return JSON containing only category and summary.
