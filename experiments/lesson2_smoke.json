@@ -1,0 +1,114 @@
+[
+  {
+    "id": "billing-01",
+    "input": "My credit card was charged $15.99 on the 4th, but my subscription is only supposed to be $9.99. Can you fix this?",
+    "expected_category": "billing",
+    "actual_category": "billing",
+    "actual_summary": "I was charged $15.99 instead of $9.99 for my subscription and want it fixed",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Correct. Summary is accurate and it remove noise words. Basically straight forward"
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  },
+  {
+    "id": "billing-02",
+    "input": "The website is so slow today I couldn't even download my invoices. Also, you double charged me for August. I need the extra $50 refunded immediately to my visa.",
+    "expected_category": "billing",
+    "actual_category": "billing",
+    "actual_summary": "The website is slow and I was double charged for August, so I need a $50 refund to my visa immediately.",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Correct. It stated both issue, yet still focus on the main billing issue"
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  },
+  {
+    "id": "account-01",
+    "input": "How do I add a second admin user to our team dashboard? I don't see the option under settings.",
+    "expected_category": "account",
+    "actual_category": "account",
+    "actual_summary": "I want to add a second admin user to our team dashboard but can't find the option in settings.",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Correct. I like how it arrange the sentence to make it easier to understand"
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  },
+  {
+    "id": "account-02",
+    "input": "cnt login paswrd reset link brok",
+    "expected_category": "account",
+    "actual_category": "account",
+    "actual_summary": "Customer cannot access login password reset link.",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Correct categories. Nicely guessed the incorect spelling. State the complain as customer."
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  },
+  {
+    "id": "tech-01",
+    "input": "Every time I click 'Export CSV', the browser console throws a CORS error and the download fails. I'm using Chrome v116.",
+    "expected_category": "technical",
+    "actual_category": "technical",
+    "actual_summary": "Exporting CSV fails due to a CORS error in Chrome v116.",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Perfect execution. Precise summary of the technical facts. Also more compact answer than v001."
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  },
+  {
+    "id": "tech-02",
+    "input": "Is the API down? All our webhook payloads have been returning 503 Gateway Timeouts for the last 20 minutes.",
+    "expected_category": "technical",
+    "actual_category": "technical",
+    "actual_summary": "Our webhooks are returning 503 Gateway Timeouts for the last 20 minutes, indicating the API is down.",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Correct and the summary also try to phraphrase the sentence. But it change question to a statement. Is that suppose to be like that?"
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  },
+  {
+    "id": "general-01",
+    "input": "I really enjoyed your recent webinar on marketing automation. Will there be a recording sent out so I can share it with my team?",
+    "expected_category": "general",
+    "actual_category": "general",
+    "actual_summary": "I enjoyed the marketing automation webinar and would like a recording to share with my team.",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Nice it ignores the noise and straight forward to the main problem. More compact compared to v001"
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  },
+  {
+    "id": "general-02",
+    "input": "Are you guys hiring for remote customer support roles? I love your product and would love to apply.",
+    "expected_category": "general",
+    "actual_category": "general",
+    "actual_summary": "A customer asks if there are remote customer support job openings and expresses interest in applying.",
+    "review": {
+      "category_correct": true,
+      "summary_faithful": true,
+      "notes": "Correct category. Summary is accurate and good way in playing with words."
+    },
+    "model": "qwen3:4b-instruct-2507-q4_K_M",
+    "prompt_version": "v002"
+  }
+]

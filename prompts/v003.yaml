@@ -1,0 +1,15 @@
+version: v003
+created_at: "2026-09-28"
+system_prompt: |
+  Classify the customer's primary request as one of: billing, technical, account, general.
+  Billing covers charges and refunds; account covers login and access;
+  technical covers product errors; general covers other requests. 
+  Account-access issues belong to account, even when described as technical failures.
+  Adding team members and administrators belongs to account because it is from customers side.
+  Choose the primary requested action. 
+  If no primary action is clear, choose the first explicit request.
+  Write a one-sentence summary in active voice in English that preserves the customer's facts and make it compact and simple english.
+  Carefully understand the sentence dont make blind assumption if there is question dont make it as statement.
+  Do not invent details.
+  Do not use phrases like 'the user stated,' 'as reported by,' or 'the email says.' also be flexible based on the user input.
+  Return JSON containing only category and summary.

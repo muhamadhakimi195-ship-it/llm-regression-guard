@@ -1,0 +1,171 @@
+{
+  "dataset_version": "v001",
+
+  "cases": [
+    {
+      "id": "billing-001",
+      "input": "Hi, I need a copy of the invoice for my September subscription payment. Please send it to the billing email already saved on my account.",
+      "expected_category": "billing",
+      "reference_summary": "The customer requests the September subscription invoice at their saved billing email address.",
+      "required_facts": [
+        "Requests the September subscription invoice",
+        "Wants it sent to the saved billing email address"
+      ],
+      "difficulty": "easy",
+      "tags": ["straightforward", "invoice"],
+      "notes": "The requested action concerns an invoice, so this belongs to billing even though an account email address is mentioned."
+    },
+    {
+      "id": "billing-002",
+      "input": "The app froze while I was upgrading my plan, so I tried again. I now see two charges of RM49 in my banking app. Please check whether I paid twice and refund any duplicate. The freezing was annoying, but sorting out the payment is what I need help with first.",
+      "expected_category": "billing",
+      "reference_summary": "The customer reports two RM49 charges after retrying a plan upgrade and requests payment verification and a refund of any duplicate.",
+      "required_facts": [
+        "Reports two charges of RM49",
+        "Retried a plan upgrade after the app froze",
+        "Requests verification and a refund if there is a duplicate payment"
+      ],
+      "difficulty": "medium",
+      "tags": ["mixed-issue", "duplicate-charge", "uncertainty"],
+      "notes": "The customer explicitly prioritizes the payment issue over the app freeze. Do not claim the freeze caused a duplicate payment or that a refund has been approved."
+    },
+    {
+      "id": "billing-003",
+      "input": "Saya dah cancel minggu lepas but today kena charge RM29 lagi. Can you check why and refund if this charge shouldn't be there?",
+      "expected_category": "billing",
+      "reference_summary": "The customer says they cancelled last week but were charged RM29 today and requests an explanation and a refund if the charge is incorrect.",
+      "required_facts": [
+        "Says they cancelled last week",
+        "Reports a new RM29 charge today",
+        "Requests an explanation and a conditional refund"
+      ],
+      "difficulty": "hard",
+      "tags": ["mixed-language", "cancellation", "unexpected-charge"],
+      "notes": "The email mixes Malay and English. The primary request concerns a charge, and the summary must remain in English without assuming the charge is invalid."
+    },
+    {
+      "id": "account-001",
+      "input": "One of our administrators has left the company. Please explain how I can remove their access without deleting the reports they created.",
+      "expected_category": "account",
+      "reference_summary": "The customer requests instructions for removing a former administrator's access while preserving their reports.",
+      "required_facts": [
+        "Wants to remove a former administrator's access",
+        "Wants to preserve the reports they created"
+      ],
+      "difficulty": "easy",
+      "tags": ["straightforward", "account-administration", "access-removal"],
+      "notes": "This label assumes the specification explicitly includes team access and administrator management under account. The customer requests instructions, not immediate deletion."
+    },
+    {
+      "id": "account-002",
+      "input": "Our dashboard has been slow since yesterday, and I also can't sign in after replacing my phone. Please help me recover access first because I no longer have the authenticator app. We can deal with the dashboard speed later.",
+      "expected_category": "account",
+      "reference_summary": "The customer prioritizes recovering account access after replacing their phone and losing access to their authenticator app.",
+      "required_facts": [
+        "Cannot sign in after replacing their phone",
+        "No longer has access to the authenticator app",
+        "Prioritizes recovering account access"
+      ],
+      "difficulty": "medium",
+      "tags": ["mixed-issue", "login", "multifactor-authentication"],
+      "notes": "The customer explicitly prioritizes account recovery over dashboard performance. The summary may omit the secondary performance complaint."
+    },
+    {
+      "id": "account-003",
+      "input": "cant get in. reset pw twice but no reset email in inbox or spam. same email ive always used. pls help",
+      "expected_category": "account",
+      "reference_summary": "The customer cannot sign in and has not received a password-reset email after two attempts, including in their spam folder.",
+      "required_facts": [
+        "Cannot sign in",
+        "Made two password-reset attempts",
+        "No reset email was found in the inbox or spam folder"
+      ],
+      "difficulty": "hard",
+      "tags": ["typos", "informal-language", "password-reset"],
+      "notes": "Interpret 'reset pw twice' in the context of the missing reset emails as two reset attempts; do not claim the password was successfully changed."
+    },
+    {
+      "id": "technical-001",
+      "input": "Since this morning, clicking Export CSV on the reports page downloads a file with only the column headers. The report on screen contains 250 rows. Please help me export the complete report.",
+      "expected_category": "technical",
+      "reference_summary": "The customer reports that CSV exports contain only headers despite 250 visible report rows and requests a complete export.",
+      "required_facts": [
+        "CSV export contains only column headers",
+        "The on-screen report contains 250 rows",
+        "Wants the complete report exported"
+      ],
+      "difficulty": "easy",
+      "tags": ["straightforward", "export", "missing-data"],
+      "notes": "A product function produces an incomplete result. Do not claim the underlying report data has been deleted."
+    },
+    {
+      "id": "technical-002",
+      "input": "I paid for the Pro plan yesterday, but the PDF export button now gives an error every time I click it. I'm not asking for a refund or a different plan. Please help me get the PDF export working for my presentation tomorrow.",
+      "expected_category": "technical",
+      "reference_summary": "The customer requests help fixing PDF export errors before a presentation tomorrow and explicitly does not request a refund or plan change.",
+      "required_facts": [
+        "PDF export fails with an error",
+        "Wants the export function fixed",
+        "Needs it for a presentation tomorrow"
+      ],
+      "difficulty": "medium",
+      "tags": ["mixed-issue", "negation", "export", "deadline"],
+      "notes": "Payment and refund words are distracting context. The explicit requested action is to repair the export functionality."
+    },
+    {
+      "id": "technical-003",
+      "input": "Is your service down or is this just our setup? Webhook deliveries have failed for about 20 minutes, but the dashboard still loads. Can you investigate? We haven't identified the cause.",
+      "expected_category": "technical",
+      "reference_summary": "The customer requests investigation of webhook delivery failures lasting about 20 minutes while the dashboard remains accessible and the cause is unknown.",
+      "required_facts": [
+        "Webhook deliveries have failed for about 20 minutes",
+        "The dashboard still loads",
+        "Requests investigation without a confirmed cause"
+      ],
+      "difficulty": "hard",
+      "tags": ["uncertainty", "webhooks", "unsupported-inference"],
+      "notes": "Do not turn the customer's outage question into a confirmed service outage or blame their setup. This case tests preservation of uncertainty."
+    },
+    {
+      "id": "general-001",
+      "input": "Will your customer training webinar next Tuesday be recorded? I can't attend live and would like to watch it afterward.",
+      "expected_category": "general",
+      "reference_summary": "The customer asks whether next Tuesday's training webinar will be recorded so they can watch it afterward.",
+      "required_facts": [
+        "Asks whether next Tuesday's training webinar will be recorded",
+        "Wants to watch afterward because they cannot attend live"
+      ],
+      "difficulty": "easy",
+      "tags": ["straightforward", "webinar", "information-request"],
+      "notes": "This is an informational request outside billing, account administration, and broken functionality. Do not promise that a recording will be available."
+    },
+    {
+      "id": "general-002",
+      "input": "Please tell me whether you run live training sessions for new customers. Also, please send me last month's invoice. Both requests are equally important to me.",
+      "expected_category": "general",
+      "reference_summary": "The customer asks about live training for new customers and requests last month's invoice, giving both requests equal priority.",
+      "required_facts": [
+        "Asks whether live training is available for new customers",
+        "Requests last month's invoice",
+        "Explicitly gives both requests equal priority"
+      ],
+      "difficulty": "medium",
+      "tags": ["mixed-issue", "equal-priority", "tie-breaker"],
+      "notes": "Apply the documented tie-breaker: when no primary request is clear, select the first explicit request. Training information appears before the invoice request, so the category is general."
+    },
+    {
+      "id": "general-003",
+      "input": "Love having to do the same clicks fifty times. Everything works, before you ask. Any chance you'll add a bulk-rename option for folders? That's a feature request, not a bug report.",
+      "expected_category": "general",
+      "reference_summary": "The customer requests a bulk-rename feature for folders and clarifies that the existing functionality works.",
+      "required_facts": [
+        "Requests a bulk-rename option for folders",
+        "Says the existing functionality works",
+        "Describes the request as a feature suggestion rather than a bug"
+      ],
+      "difficulty": "hard",
+      "tags": ["sarcasm", "feature-request", "negation"],
+      "notes": "Sarcastic dissatisfaction does not establish broken functionality. Under the current policy, feature suggestions belong to general."
+    }
+  ]
+}

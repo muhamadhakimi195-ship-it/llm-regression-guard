@@ -20,8 +20,7 @@ class OllamaBackend:
 
 
 MODEL = "qwen3:4b-instruct-2507-q4_K_M"
-PROMPT_PATH = Path(__file__).resolve().parents[1] / "prompts" / "v001.yaml"
-
+PROMPT_PATH = Path(__file__).resolve().parents[1] / "prompts" / "v003.yaml"
 
 def main():
     prompt_config = load_prompt(PROMPT_PATH)

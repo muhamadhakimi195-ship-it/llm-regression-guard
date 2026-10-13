@@ -55,3 +55,30 @@ Understand each choice before continuing:
 - strict=True avoids accepting inappropriate values through automatic type conversion.
 - str_strip_whitespace=True removes surrounding whitespace. Together with min_length=1, it rejects blank text.
 - The length limits are our initial application limits, measured in characters. They are not token limits.
+
+The email categorization and summarization rules are officially locked based on your project specifications. For any emails containing multiple issues, the routing will target the customer's primary requested action, defaulting to their first explicit request as a tie-breaker if the primary action is ambiguous. 
+
+**Category Routing Rules**
+
+| Category | Routing Condition |
+| :--- | :--- |
+| **billing** | The customer's primary request concerns charges, payments, invoices, or refunds. |
+| **account** | The customer's primary request concerns login, passwords, identity, profile, or account access. |
+| **technical** | The customer's primary request concerns broken product functionality, crashes, errors, or integrations, excluding account-access issues. |
+| **general** | The customer's primary request concerns product questions, feedback, or requests that fall outside the other categories. |
+
+**Mixed-Issue Handling & Dispute Resolution**
+* Identify the customer's primary requested action to assign the corresponding category.
+* If there is no clear primary action, apply the first explicit request in the email as the definitive tie-breaker.
+* Write a short, clear reason justifying the final category selection whenever a label could reasonably be disputed between two or more routing rules.
+
+**Summary Formatting Constraints**
+* Formulate exactly one sentence in English.
+* Describe the customer's specific problem or request directly.
+* Preserve key facts from the original communication.
+* Do not invent causes, promises, or resolutions.
+
+**Validation & Contract Checks**
+* Ensure the returned category perfectly matches one of the four allowed literal string values.
+* Confirm no unexpected fields (such as confidence scores or approval statuses) are included in the output.
+* Verify all text strings are stripped of surrounding whitespace and are not blank.

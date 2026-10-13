@@ -1,0 +1,175 @@
+{
+  "dataset_version": "v001",
+  "prompt_version": "v003",
+  "model": "qwen3:4b-instruct-2507-q4_K_M",
+  "results": [
+    {
+      "case_id": "billing-001",
+      "input": "Hi, I need a copy of the invoice for my September subscription payment. Please send it to the billing email already saved on my account.",
+      "actual_output": {
+        "category": "billing",
+        "summary": "Sending a copy of the September invoice to the billing email on my account."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "billing-002",
+      "input": "The app froze while I was upgrading my plan, so I tried again. I now see two charges of RM49 in my banking app. Please check whether I paid twice and refund any duplicate. The freezing was annoying, but sorting out the payment is what I need help with first.",
+      "actual_output": {
+        "category": "billing",
+        "summary": "I see two charges of RM49 and want to know if I paid twice and if a refund is needed."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    } ,
+    {
+      "case_id": "billing-003",
+      "input": "Saya dah cancel minggu lepas but today kena charge RM29 lagi. Can you check why and refund if this charge shouldn't be there?",
+      "actual_output": {
+        "category": "billing",
+        "summary": " I cancelled last week but am still being charged RM29, can you check if this charge is valid and refund it if it shouldn't be there."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    } ,
+    {
+      "case_id": "account-001",
+      "input": "One of our administrators has left the company. Please explain how I can remove their access without deleting the reports they created.",
+      "actual_output": {
+        "category": "account",
+        "summary": "I need to remove an administrator's access without deleting the reports they created."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "account-002",
+      "input": "One of our administrators has left the company. Please explain how I can remove their access without deleting the reports they created.",
+      "actual_output": {
+        "category": "technical",
+        "summary": "I can't sign in because I lost my authenticator app after replacing my phone and the dashboard is slow."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "account-003",
+      "input": "cant get in. reset pw twice but no reset email in inbox or spam. same email ive always used. pls help.",
+      "actual_output": {
+        "category": "account",
+        "summary": "I can't access my account, I've reset my password twice but no reset email appears in my inbox or spam, and I've always used the same email."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "technical-001",
+      "input": "Since this morning, clicking Export CSV on the reports page downloads a file with only the column headers. The report on screen contains 250 rows. Please help me export the complete report.",
+      "actual_output": {
+        "category": "technical",
+        "summary": "Exporting CSV from the reports page downloads only headers, not the 250 rows of data shown on screen."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "technical-002",
+      "input": "I paid for the Pro plan yesterday, but the PDF export button now gives an error every time I click it. I'm not asking for a refund or a different plan. Please help me get the PDF export working for my presentation tomorrow.",
+      "actual_output": {
+        "category": "technical",
+        "summary": "I paid for the Pro plan yesterday and now the PDF export button shows an error every time I click it, I need it to work for my presentation tomorrow"
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "technical-003",
+      "input": "Is your service down or is this just our setup? Webhook deliveries have failed for about 20 minutes, but the dashboard still loads. Can you investigate? We haven't identified the cause.",
+      "actual_output": {
+        "category": "technical",
+        "summary": "Webhook deliveries have failed for 20 minutes but the dashboard still loads, and we need to investigate the cause."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "general-001",
+      "input": "Will your customer training webinar next Tuesday be recorded? I can't attend live and would like to watch it afterward.",
+      "actual_output": {
+        "category": "technical",
+        "summary": "Webhook deliveries have failed for 20 minutes but the dashboard still loads, and we need to investigate the cause."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "general-002",
+      "input": "Please tell me whether you run live training sessions for new customers. Also, please send me last month's invoice. Both requests are equally important to me.",
+      "actual_output": {
+        "category": "technical",
+        "summary": "Webhook deliveries have failed for 20 minutes but the dashboard still loads, and we need to investigate the cause."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    },
+    {
+      "case_id": "general-001",
+      "input": "Love having to do the same clicks fifty times. Everything works, before you ask. Any chance you'll add a bulk-rename option for folders? That's a feature request, not a bug report.",
+      "actual_output": {
+        "category": "technical",
+        "summary": "Webhook deliveries have failed for 20 minutes but the dashboard still loads, and we need to investigate the cause."
+      },
+      "review": {
+        "category_correct": true,
+        "required_facts_present": null,
+        "no_unsupported_claims": null,
+        "notes": ""
+      }
+    }      
+  ]
+}
